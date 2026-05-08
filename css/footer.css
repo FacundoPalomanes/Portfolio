@@ -1,0 +1,104 @@
+/* Reciclado de footer.css de La Gran Esquina junto con cambios  */
+
+.footer-basic {
+  padding: 40px 20px;
+  background-color: var(--white);
+  border-top: 1px solid #eaeaea;
+}
+
+.footer-basic .social {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  padding-bottom: 25px;
+}
+
+.footer-basic .social > a {
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 1.5px solid #ccc;
+  color: inherit;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+.footer-basic .social > a:hover {
+  background-color: var(--black);
+  color: var(--white);
+}
+
+.footer-basic .social a img {
+  width: 60%;
+  transition: filter 0.3s ease-in-out;
+  filter: none;
+}
+
+.footer-basic .social a:hover img {
+  filter: invert(1);
+}
+
+body.dark-mode .footer-basic {
+  background-color: #1a1a1a;
+  color: var(--white);
+}
+
+body.dark-mode .footer-basic .social a {
+  border-color: #555;
+}
+
+body.dark-mode .footer-basic .social a:hover {
+  background-color: var(--white);
+}
+
+body.dark-mode .footer-basic .social > a {
+  background-color: var(--black);
+}
+
+body.dark-mode .footer-basic .social a img {
+  filter: invert(1);
+}
+
+body.dark-mode .footer-basic .social a:hover img {
+  filter: invert(0);
+}
+
+.footer-basic .copyright {
+  margin-top: 15px;
+  text-align: center;
+  font-size: 14px;
+  color: var(--black);
+}
+
+.footer-text {
+  margin-top: 15px;
+  text-align: center;
+  font-size: 16px;
+  color: var(--black);
+}
+
+body.dark-mode .footer-text {
+  color: var(--gray-light);
+}
+
+body.dark-mode .footer-basic .copyright {
+  color: #aaa;
+}
+
+@media screen and (max-width: 768px) {
+  .footer-basic {
+    padding: 30px 10px;
+  }
+  .footer-basic .social > a {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.text-decoration-none {
+  text-decoration: none;
+}

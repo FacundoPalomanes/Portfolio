@@ -1,0 +1,29 @@
+/* Reciclado de La Gran Esquina — variables y modo oscuro base */
+:root {
+  --black: #000;
+  --white: #fff;
+  --blue: #4852d7;
+  --red: #ff0000;
+  --gray: #f5f5f5;
+  --grid-proyectos: #e2e8f0;
+  --grid-p-dark-gray: #555;
+  --transition-speed: 0.4s;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--gray);
+  color: var(--black);
+  transition: background-color var(--transition-speed), color var(--transition-speed);
+}
+
+body.dark-mode {
+  background-color: #1a1a1a;
+  color: var(--white);
+}

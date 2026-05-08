@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio — Facundo Palomanes</title>
+  <link rel="stylesheet" href="css/global-styles.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/portfolio.css">
+  <link rel="icon" href="/assets/favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+  <header class="header">
+    <section class="container-navbar">
+      <nav class="navbar">
+        <a href="#inicio" class="navbar-logo">Facundo Palomanes</a>
+        <div class="navbar-left">
+          <div class="navbar__nav">
+            <ul class="nav__list">
+              <li class="nav__link"><a href="#inicio">Inicio</a></li>
+              <li class="nav__link"><a href="#info">Información</a></li>
+              <li class="nav__link"><a href="#conocimientos">Conocimientos</a></li>
+              <li class="nav__link"><a href="#proyectos">Proyectos</a></li>
+              <li class="nav__link"><a href="#footer">Contacto</a></li>
+              <li class="nav__link no-hover-effect">
+                <a href="#" id="dark-mode-toggle" aria-label="Cambiar modo oscuro">🌙</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </section>
+  </header>
+
+  <main>
+    <section id="inicio" class="seccion presentacion">
+      <div class="presentacion-texto">
+        <h1>Hola, soy <span class="destacado">Facundo Palomanes</span></h1>
+        <p class="subtitulo">Estudiante de la UTN — TP Portfolio</p>
+        <p class="presentacion-bajada">
+          Soy un desarrollador fullstack con experiencia en la creación de aplicaciones web y móviles eficientes y escalables. 
+          Me gustan los nuevos desafíos y siempre estoy dispuesto a aprender nuevas tecnologías. 
+          Actualmente estoy estudiando la licenciatura en Programación en la Universidad Tecnológica Nacional (UTN). 
+          Me destaco en la resolución de problemas complejos y tengo fuertes habilidades de trabajo en equipo.
+          <strong>Este portfolio reutiliza la idea de la web de "Zinguería La Gran Esquina" Pagina que desarrolle anteriormente como proyecto personal</strong>
+        </p>
+      </div>
+      <div class="presentacion-foto">
+        <img src="assets/my-photo.png" alt="Foto portfolio" width="220" height="220">
+      </div>
+    </section>
+
+    <section id="info" class="seccion">
+      <h2>Información general</h2>
+      <div class="caja-info">
+        <p><strong>Nombre completo:</strong> Facundo Palomanes</p>
+        <p><strong>Edad:</strong> 21 años</p>
+        <p><strong>Ubicación:</strong> Buenos Aires, Argentina</p>
+        <p><strong>Estudios:</strong> Tecnicatura en Programacion — Universidad Tecnológica Nacional (UTN)</p>
+        <p><strong>Sobre mí:</strong> Desde chico fui muy apasionado por la programacion y el gaming, en la pandemia empeze creando un servidor de un juego y despues trabaje como programador para una empresa de creacion de software para celulares.</p>
+      </div>
+    </section>
+
+    <section id="conocimientos" class="seccion seccion-alterna">
+      <h2>Conocimientos</h2>
+      <ul class="lista-conocimientos">
+        <li>HTML, CSS, JavaScript, SASS, TailwindCSS, Bootstrap</li>
+        <li>Javascript, Typescript, Nodejs, Express.js</li>
+        <li>Expo, Firebase, React Native, C++</li>
+        <li>Git, Github, npm, Postman</li>
+      </ul>
+    </section>
+
+    <section id="proyectos" class="seccion">
+      <h2>Proyectos</h2>
+      <div class="grid-proyectos">
+        <article class="tarjeta-proyecto">
+          <a href="https://www.zinguerialagranesquina.com/" target="_blank" class="text-decoration-none">
+            <h3>Zinguería La Gran Esquina</h3>
+            <p>Sitio sencillo para una empresa familiar con catálogo , carrusel, formulario de contacto y otras cosas mas .</p>
+          </a>
+        </article>
+        <article class="tarjeta-proyecto">
+          <a href="https://github.com/FacundoPalomanes/excelARBA" target="_blank" class="text-decoration-none">
+            <h3>Automatizacion en python</h3>
+            <p>Projecto personal hecho con python como una app de escritorio para facilitar unos temas en excel sobre contaduria, teniendo clientes y entrando a ARCA para descargar los datos modificarlos y enviarlos por correo electronico.</p>
+          </a>
+        </article>
+        <article class="tarjeta-proyecto">
+          <a href="https://pokemon-render-page.netlify.app/" target="_blank" class="text-decoration-none">
+            <h3>Pagina Pokemon</h3>
+            <p>Pagina hecha en 2 dias con una api que llama a los pokemons y se muestran con su busqueda y en distintas paginas. (muestro este en vez de otros mejores por los tutoriales para el codigo entrar en mi github).</p>
+          </a>
+        </article>
+      </div>
+    </section>
+
+
+  <footer id="footer" class="footer-basic">
+    <div class="social">
+      <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/facundopalomanes_" title="Instagram"><img
+          src="assets/svg/logo-instagram.svg" alt="Instagram" width="32" height="32" loading="lazy"></a>
+      <a target="_blank" rel="noopener noreferrer" href="https://github.com/FacundoPalomanes" title="GitHub"><img
+          src="assets/svg/logo-github.svg" alt="GitHub" width="32" height="32" loading="lazy"></a>
+    </div>
+    <p class="copyright">Portfolio — Programación 3 — Prof. Maxi — <span id="anioActual"></span> — Facundo Palomanes</p>
+    <h3 class="footer-text">Este portfolio fue unicamente creado con HTML, CSS y Javascript reutilizando codigo de otra web que cree anteriormente como projecto personal llamada "Zingueria La Gran Esquina"</h3>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
