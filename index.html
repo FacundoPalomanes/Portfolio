@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="css/footer.css">
   <link rel="stylesheet" href="css/portfolio.css">
   <link rel="icon" href="/assets/favicon.ico" type="image/x-icon">
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 </head>
 
 <body>
@@ -24,7 +25,7 @@
               <li class="nav__link"><a href="#info">Información</a></li>
               <li class="nav__link"><a href="#conocimientos">Conocimientos</a></li>
               <li class="nav__link"><a href="#proyectos">Proyectos</a></li>
-              <li class="nav__link"><a href="#footer">Contacto</a></li>
+              <li class="nav__link"><a href="#contacto">Contacto</a></li>
               <li class="nav__link no-hover-effect">
                 <a href="#" id="dark-mode-toggle" aria-label="Cambiar modo oscuro">🌙</a>
               </li>
@@ -98,6 +99,38 @@
       </div>
     </section>
 
+    <section id="contacto" class="seccion seccion-alterna">
+      <h2>Contacto</h2>
+      <form id="contact-form" class="contact-form">
+        <div class="contact-form-grid">
+          <div class="form-group">
+            <label class="form-label" for="nombre">Nombre</label>
+            <input id="nombre" type="text" class="form-control" aria-label="Nombre" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="apellido">Apellido</label>
+            <input id="apellido" type="text" class="form-control" aria-label="Apellido" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="email">Email</label>
+          <input id="email" type="email" class="form-control" placeholder="name@example.com" required>
+        </div>
+        <div class="form-group form-group--half">
+          <label class="form-label" for="numero">Celular</label>
+          <input id="numero" type="tel" class="form-control" aria-label="Celular" placeholder="10 dígitos sin guiones" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="consulta">Mensaje</label>
+          <textarea id="consulta" class="form-control form-control--textarea" rows="4" placeholder="Contame en qué puedo ayudarte…"></textarea>
+        </div>
+        <div class="form-actions">
+          <button type="submit" class="btn-enviar">Enviar</button>
+        </div>
+      </form>
+      <div id="response" class="form-response" aria-live="polite"></div>
+    </section>
+  </main>
 
   <footer id="footer" class="footer-basic">
     <div class="social">
@@ -107,7 +140,7 @@
           src="assets/svg/logo-github.svg" alt="GitHub" width="32" height="32" loading="lazy"></a>
     </div>
     <p class="copyright">Portfolio — Programación 3 — Prof. Maxi — <span id="anioActual"></span> — Facundo Palomanes</p>
-    <h3 class="footer-text">Este portfolio fue unicamente creado con HTML, CSS y Javascript reutilizando codigo de otra web que cree anteriormente como projecto personal llamada "Zingueria La Gran Esquina"</h3>
+    <h3 class="footer-text">Este portfolio fue unicamente creado con HTML, CSS y Javascript reutilizando codigo de otra web que cree anteriormente como projecto personal llamada "Zingueria La Gran Esquina" (Por favor no spamear el formulario porque llega a mi mail realmente)</h3>
   </footer>
 
   <script src="script.js"></script>

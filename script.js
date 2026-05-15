@@ -54,4 +54,91 @@
   var anio = document.getElementById("anioActual");
   if (anio) anio.textContent = new Date().getFullYear();
 
+  // --- Formulario de contacto (EmailJS, como La Gran Esquina) ---
+  var contactForm = document.getElementById("contact-form");
+  if (contactForm && typeof emailjs !== "undefined") {
+    emailjs.init("qujuwaFg6Ka9_Azl0");
+
+    function setResponse(html) {
+      var response = document.getElementById("response");
+      if (response) response.innerHTML = html;
+    }
+
+    contactForm.addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      var regexEmail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+      var regexTelefono = /^\d{10}$/;
+      var regexNombreApellido = /^[A-Za-záéíóúÁÉÍÓÚñÑ]+$/;
+
+      var formValid = true;
+      var errors = [];
+
+      var emailInput = document.getElementById("email");
+      var numeroInput = document.getElementById("numero");
+      var nombreInput = document.getElementById("nombre");
+      var apellidoInput = document.getElementById("apellido");
+      var consultaInput = document.getElementById("consulta");
+
+      if (!regexEmail.test(emailInput.value)) {
+        errors.push("Hay un error en el email");
+        emailInput.value = "";
+        formValid = false;
+      }
+
+      if (!regexTelefono.test(numeroInput.value)) {
+        errors.push("Hay un error en el teléfono, no ingresar con puntos ni guiones");
+        numeroInput.value = "";
+        formValid = false;
+      }
+
+      if (
+        !regexNombreApellido.test(nombreInput.value) ||
+        !regexNombreApellido.test(apellidoInput.value)
+      ) {
+        errors.push("Hay un error en el nombre y apellido, no ingresar números ni símbolos");
+        nombreInput.value = "";
+        apellidoInput.value = "";
+        formValid = false;
+      }
+
+      if (formValid) {
+        var params = {
+          from_name: nombreInput.value + " " + apellidoInput.value,
+          message:
+            "Email: " +
+            emailInput.value +
+            ", Numero De Telefono: " +
+            numeroInput.value +
+            ", Consulta: " +
+            consultaInput.value,
+        };
+
+        emailjs
+          .send("service_jnl3jqq", "template_4jxp403", params)
+          .then(function () {
+            contactForm.reset();
+            setResponse(
+              '<div class="form-alert form-alert--success" role="alert">Mensaje enviado correctamente.</div>'
+            );
+          })
+          .catch(function (error) {
+            setResponse(
+              '<div class="form-alert form-alert--error" role="alert">Hubo un error intentando mandar el formulario.</div>'
+            );
+            console.error(error);
+          });
+      } else {
+        var textResponse = errors
+          .map(function (err, index) {
+            return index === 0 ? err : err.toLowerCase();
+          })
+          .join(", ");
+        setResponse(
+          '<div class="form-alert form-alert--error" role="alert">' + textResponse + "</div>"
+        );
+      }
+    });
+  }
+
 })();
